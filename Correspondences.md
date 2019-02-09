@@ -30,3 +30,12 @@ Moving one shape or the other, or both, inside the ambient space means varying t
 
 <a href='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/correspondences%20and%20GH%20distance.pdf'> **Correspondences and Gromov-Hausdorff Distance** </a>
 
+### Matrix of Correspondence
+
+We can represent correspondences as a matrix m-by-n (m is the number of points from X and n is the number of points from Y). The matrix has only 0 and 1 - when the couple (xi,yj) is a correspondence. This matrix encodes in the standard basis a map between function spaces, so it's a map betwen a map that takes every point of X to R, and a map that takes every point of Y to R. It maps functions to functions. 
+
+A **permutation matrix** has every row and column summing up to 1 (so they have just one value equal to 1 and all others are zeros). Permutations matrices encode one-to-one correspondences, bijective maps.
+
+Finding the correspondence that minimize the distortion is a problem usually represented with a matrix where every element is the value of the distortion between (xi,yl) and (xj,ym).
+
+<a href= 'https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/QAP.pdf'> **Quadratic Assignment Problem with matrix notation** </a>
