@@ -27,5 +27,5 @@ A global measure for distortion is the quadratic stress. It is the sum of the qu
 
 The minimization problem does not have a unique solution, so applying isometries to the optimizer will not change the stress.
 
-**Mathemical demonstration of matrix form for the Quadratic Stress**.
+<a href='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/stress%20computation.pdf'>**Mathemical demonstration of matrix form for the Quadratic Stress**</a>.
 
