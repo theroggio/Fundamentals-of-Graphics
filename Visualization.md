@@ -34,4 +34,21 @@ Matlab Shading is our possibility to interpolate or not the values, it depends o
 
 Colormaps are N by 3 matrices. N = number of vertices, 3 is for the RGB intensity with values in [0,1]. It's a quantization. 
 
+Usually a colormap is defined with a scale of values that goes from the min to the max and interpolates linearly. Sometimes we could desire it to be different to get a saturation or other effects for a better visualization. 
+
+If we decrease the max then all the values over the max will have the same colors; same if we increase the minimum. These methods can be helpful for visualizing local max/min, emphasizing errors. 
+
+Another useful thing is centring the color map, that will express better when values go low and when they go high. 
+
+### Correspondences 
+
+Because of their being they're very difficult to visualize. They could be one-to-many, sparse, dense, probabilistics. So there is no 'correct' visualization, it really depends on the purpose and result.
+
+Bad choice: lines - they're confusing and if you have a lot of correspondences they are messy and not clear.
+
+Good choice: points with colors.
+
+If we have a dense correspondence matrix (nearly all the vertices) we could define a function that is transported and that should have same colors in same regions. 
+
+
 
