@@ -28,8 +28,5 @@ Moving one shape or the other, or both, inside the ambient space means varying t
 
 <a href='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/icp.pdf'> **Iterative Closest Point** </a>
 
-
-#### Correspondence and Gromov-Hausdorff distance
-
-// link to pdf //
+<a href='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/correspondences%20and%20GH%20distance.pdf'> **Correspondences and Gromov-Hausdorff Distance** </a>
 
