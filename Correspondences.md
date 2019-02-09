@@ -26,9 +26,8 @@ Let's consider the Hausdorff distance in its non-symmetric version (so consideri
 
 Moving one shape or the other, or both, inside the ambient space means varying the distance. Rigidly alligning the shapes means finding the 'translation' for which we have minimum Hausdorff distance; basically we check over all the rigid isometries (roto-translations).
 
-#### Iterative Closest Point
+<a href='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/icp.pdf'> **Iterative Closest Point** </a>
 
-// link to pdf //
 
 #### Correspondence and Gromov-Hausdorff distance
 
