@@ -40,4 +40,50 @@ The matrices are sparse, symmetric, with a structure similar to the adjacency ma
 
 <img src='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/massandstiffness.jpg'/>
 
+### Heat Kernel
+
+A numerical solution for the heat diffusion on surfaces is obtained by using the integral { kernel(x,y) * u_0(y) } where the **heat kernel** of surface X describes the amount of heat transferred from point x to point y in time t. It is a property of the manifold that does not depend on the initial configuration. 
+
+Let's assume an initial configuration as Dirac delta at point z. It satisfies the sampling property. 
+
+So the solution is simple, and it's the kernel itself.
+
+#### Properties
+
+In Rn is given by  ( 1 / n-root(4 pi t) ) * exp ( - quadratic norm ( x - y) / 4t )
+
+Distance can be recovered by Varadhan's result: - lim (t -> 0) 4t log(kernel).
+
+If T is an isometry then the kernel on surface X (point x,y) has the same value of the kernel on surface Y (point T(x),T(y)).
+
+### Spectral Decomposition
+
+Any solution can be written in the Laplacian eigenbasis as the sum of c * lambda * eigenfunction. 
+
+Thus we can write the partial derivative on the left-side as a sum over partial derivative of c * eigenfunction. 
+
+Then we obtain **partial derivative c = - c * lambda**.
+
+The final solution is **u(x,t) = sum d{i} * e ^ (- lambda{i] * t) * eigenfunction{i}**.
+
+To find the coefficientd d{i} we use the initial condition comouting at t = 0.  For which we obtain that u_0(x) = sum d{i} * eigenfunction{i}. 
+
+If the initial condition was a dirac delta_y (x) then d{i} = <eigenfunction{i},dirac{y}> = eigenfunction{i}(y).
+
+In matrix notation:     **K{t} = FI * diag(exp(-lambda{i} * t) * transpose(FI)**.
+
+### Heat Kernel Signature
+
+We use the property of isometry T to define a **local descriptor**. The heat kernel signature is defined as the diagonal of the above matrix. 
+
+If the two surfaces are isometric then we expect corresponding points to behave similarly. 
+
+### Diffusion Distance
+
+The heat kernel does not define a distance measure, but a family of diffusion distasnces can be obtained as the quadratic norm of the difference of kernel(x,+) and kernel(+,y). This is indeed a metric, diffusion time behaves like a scaling factor
+
+The interpretation is that when two points are very close there is a large probability of transition from one to the other. 
+
+/ image to put /
+
 
