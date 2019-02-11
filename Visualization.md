@@ -24,11 +24,11 @@ Matlab Shading is our possibility to interpolate or not the values, it depends o
 
 ### Matlab Functions for Visualization
 
-** Ambient light ** is a nondirectional light for the whole scene. It affects shadows.
+**Ambient light** is a nondirectional light for the whole scene. It affects shadows.
 
-** Diffuse reflection ** is the reflecation of the surface - wood does not reflect, a diamond does. It affects brilliance of colors.
+**Diffuse reflection** is the reflecation of the surface - wood does not reflect, a diamond does. It affects brilliance of colors.
 
-** Specular reflection ** is what we usually call the light point on a surface.
+**Specular reflection** is what we usually call the light point on a surface.
 
 ### Colormaps
 
