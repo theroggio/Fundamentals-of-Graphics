@@ -84,6 +84,6 @@ The heat kernel does not define a distance measure, but a family of diffusion di
 
 The interpretation is that when two points are very close there is a large probability of transition from one to the other. 
 
-/ image to put /
+<img src='https://github.com/theroggio/Fundamentals-of-Graphics/blob/master/scan/heatdist.jpg'/>
 
 
