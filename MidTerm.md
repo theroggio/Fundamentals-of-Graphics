@@ -47,8 +47,41 @@ So both column and row rank are equal 2.
 
 We can build A as a matrix n-by-n where n = number of vertices. The diagonal has all ones. Then for every edge e{ij} the element A{ij} must be equal to - 1/d{i}. 
 
-The generic element of  A * A is 0 if the two vertex are not connected with neither one or two steps of edges, it's TO COMPLETE
+The generic element of  A * A is 0 if the two vertex are connected by a number of edges = 1 or 2. In the other cases it express the number of possible paths from vertex i to vertex j considering a number of max steps = 2. 
 
+### Possible matrices representing a valid correspondence in the standard basis. 
+
+For correspondence we mean that every point x of first surface is mapped into a point y of second surface. 
+
+- a matrix full of zeros NO: it means we have no correspondances, basically we map every point to zero.
+- one * transpose(one) NO: we're saying that every point in x corresponds to every point in y
+- A (m-by-n) such that A *  ones = ones YES: if A is in the standard basis it cannot have more than one y matched to a x and the need of having at least one 1 on any row check that every x has a y correspondent.
+- B such that transpose(one) * B = transpsoe(one) NO: as before but on the other sense, it checks if we have one correspondance for every y but not for every x 
+- A such that transpose(one) * A * one = 1 NO: we're counting the number of correspondances, a valid counter example is a matrix with just one value equal to one.
+- convex combination 0.4 * A + (1-0.4) * B (A,B as above) NO: it's not in the standard basis because we multply for a scalar number different from 1 or 0.
+
+### Let F(M) be a function space on a discerete mesh M, consider the function defining a squared geodesic distance weighted of a function g (belonging to F). Is this a linear map from F(M) to F(M) ? Why / Write the matrix notation.
+
+Yes it is, because we take as input g and give as output f. 
+
+We must compute the matrix of squared geodesic distance (where every element is the power of 2 of the geodesic distance between i and j). Then we must divide every element of the matrix for n = number of vertices. Indicating with g the function g we're averaging that is defined for every vertex we can write:
+
+F = Dn * g 
+
+It's easy to prove that it respect the general formula provided in the text. 
+
+### Let M = (V,E,T) be a manifold triangle mesh and let n:T -> R3 be its normal vector field. Using matrix notation, write an expression that computes for each triangle the average of its neighbour normals. 
+
+The normal must be computed as the cross product between two edges, in the case of the triangle we must compute the three components of the vector. 
+
+First we can use vector L = V2 - V1 e G = V3 - V1 (computed as V(T2)-V(T1) and V(T3)-V(T2) basically we create two m-by-3 vectors). 
+
+Then we compute the N vector (which is n-by-3) as [ L(:,2) * G(:,3) - L(:,3) * G(:,2) ,  L(:,3) * G(:,1) - L(:,1) * G(:,3) , L(:,1) * G(:,2) - L(:,2) * G(:,1) ]. 
+
+Then we need the adjacency matrix triangle-to-triangle Adj (m-by-m). Remember the adjacency matrix has for every row (triangle) a non zero element if they are neighbours, so in this way we select the neigbbours. 
+The Adj matrix must be modified, every row should be divided by the number of its non-zero values (it's the number of neighbours).
+
+Now we can use Adjn * N.
 
 
 
