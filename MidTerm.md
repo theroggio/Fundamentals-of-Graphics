@@ -56,9 +56,9 @@ For correspondence we mean that every point x of first surface is mapped into a 
 - a matrix full of zeros NO: it means we have no correspondances, basically we map every point to zero.
 - one * transpose(one) NO: we're saying that every point in x corresponds to every point in y
 - A (m-by-n) such that A *  ones = ones YES: if A is in the standard basis it cannot have more than one y matched to a x and the need of having at least one 1 on any row check that every x has a y correspondent.
-- B such that transpose(one) * B = transpsoe(one) NO: as before but on the other sense, it checks if we have one correspondance for every y but not for every x 
+- B such that transpose(one) * B = transpose(one) YES: let's consider B as the transpose of the above A matrix which is a correspondence matrix, then we know that A * ones = ones -> i transpose the formula and obtain transpose(ones) * transpose(A) = transpose(ones) and I am indicating B = transpose(A). So B is the same matrix as above.
 - A such that transpose(one) * A * one = 1 NO: we're counting the number of correspondances, a valid counter example is a matrix with just one value equal to one.
-- convex combination 0.4 * A + (1-0.4) * B (A,B as above) NO: it's not in the standard basis because we multply for a scalar number different from 1 or 0.
+- convex combination 0.4 * A + (1-0.4) * B (A,B as above) NO: it's not in the standard basis because we multply for a scalar number different from 1 or 0 and can have multiple values on a row/column.
 
 ### Let F(M) be a function space on a discerete mesh M, consider the function defining a squared geodesic distance weighted of a function g (belonging to F). Is this a linear map from F(M) to F(M) ? Why / Write the matrix notation.
 
